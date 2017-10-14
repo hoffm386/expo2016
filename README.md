@@ -1,4 +1,4 @@
-# Devpost Expo / Table Number App
+# Devpost Expo [![Build Status](https://travis-ci.org/HackGT/expo2016.svg?branch=master)](https://travis-ci.org/HackGT/expo2016)
 
 ## What is it?
 
