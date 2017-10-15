@@ -52,6 +52,7 @@ You can also use your own favico or Hackathon logo/header.
       <thead>
         <tr>
           <th class="number">Table</th>
+          <th class="time">Time Slot</th>
           <th class="name">Project</th>
           <th class="prize">Sponsor Prizes</th>
         </tr>
@@ -60,6 +61,7 @@ You can also use your own favico or Hackathon logo/header.
         {{#data}}
           <tr>
             <td class="number">{{table}}</td>
+            <td class="time">{{time}}</th>
             <td class="name"><a href="{{{link}}}" target="_blank">{{project}}</a></td>
             <td class="prize">{{sponsors}}</td>
           </tr>
@@ -107,6 +109,13 @@ You can also use your own favico or Hackathon logo/header.
           for (var x in tableData.data) {
             var s = tableData.data[x]['sponsors'];
             tableData.data[x]['sponsors'] = s.replace(/,/ig, ", ");
+
+            if (tableData.data[x]['expo'] === '1') {
+                tableData.data[x]['time'] = "10:15 AM";
+            }
+            else {
+                tableData.data[x]['time'] = "11:15 AM";
+            }
           }
           // print cleaned data
           console.log(tableData);
