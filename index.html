@@ -108,7 +108,9 @@ You can also use your own favico or Hackathon logo/header.
           // add commas to sponsor prize data
           for (var x in tableData.data) {
             var s = tableData.data[x]['sponsors'];
-            tableData.data[x]['sponsors'] = s.replace(/,/ig, ", ");
+            if (s) {
+                tableData.data[x]['sponsors'] = s.replace(/,/ig, ", ");
+            }
 
             if (tableData.data[x]['expo'] === '1') {
                 tableData.data[x]['time'] = "10:15 AM";
