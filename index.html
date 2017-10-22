@@ -63,7 +63,7 @@ You can also use your own favico or Hackathon logo/header.
       <thead>
         <tr>
           <th class="number">Table</th>
-          <th class="time">Time Slot</th>
+          <th class="room">Room</th>
           <th class="name">Project</th>
           <th class="prize">Sponsor Prizes</th>
         </tr>
@@ -72,7 +72,7 @@ You can also use your own favico or Hackathon logo/header.
         {{#data}}
           <tr>
             <td class="number">{{table}}</td>
-            <td class="time">{{time}}</th>
+            <td class="room">{{room}}</th>
             <td class="name"><a href="{{{link}}}" target="_blank">{{project}}</a></td>
             <td class="prize">{{sponsors}}</td>
           </tr>
@@ -123,11 +123,25 @@ You can also use your own favico or Hackathon logo/header.
                 tableData.data[x]['sponsors'] = s.replace(/,/ig, ", ");
             }
 
-            if (tableData.data[x]['expo'] === '1') {
-                tableData.data[x]['time'] = "10:15 AM";
+            var intNum = parseInt(tableData.data[x]['table']);
+            
+            if (intNum < 19) {
+                tableData.data[x]['room'] = "231";
+            }
+            else if (intNum < 31) {
+                tableData.data[x]['room'] = "251";
+            }
+            else if (intNum < 68) {
+                tableData.data[x]['room'] = "241";
+            }
+            else if (intNum < 80) {
+                tableData.data[x]['room'] = "238";
+            }
+            else if (intNum < 92) {
+                tableData.data[x]['room'] = "228";
             }
             else {
-                tableData.data[x]['time'] = "12:00 PM";
+              tableData.data[x]['room'] = "234";
             }
           }
           // print cleaned data
